@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "boostcamp_ai",
+    "program_name": "네이버 부스트캠프 AI Tech",
+    "category": "bootcamp",
+    "company_or_org": "네이버 커넥트재단",
+    "official_url": "https://boostcamp.connect.or.kr/guide_ai.html",
+    "status": "recurring",
+    "job_area": [
+      "ai",
+      "data"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 1회, 약 24주",
+    "application_period": "매년 7~8월",
+    "program_period": "9월 ~ 익년 2월",
+    "location": "온라인",
+    "online_offline": "온라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "전액 무료",
+      "AI 기업 채용 연계"
+    ],
+    "tech_keywords": [
+      "Python",
+      "PyTorch",
+      "딥러닝",
+      "NLP",
+      "CV"
+    ],
+    "eligibility": [
+      "개발 기초 지식 보유자"
+    ],
+    "summary": "AI/ML 특화. 딥러닝·NLP·컴퓨터비전 실무형 AI 개발자 양성.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "boostcamp_wm",
+    "program_name": "네이버 부스트캠프 웹·모바일",
+    "category": "bootcamp",
+    "company_or_org": "네이버 커넥트재단",
+    "official_url": "https://boostcamp.connect.or.kr/guide_wm.html",
+    "status": "recurring",
+    "job_area": [
+      "fullstack",
+      "mobile"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 1회, 22주",
+    "application_period": "매년 5~6월",
+    "program_period": "8월 ~ 익년 2월",
+    "location": "온라인",
+    "online_offline": "온라인",
+    "paid_or_free": "무료 (내일배움카드 불필요)",
+    "benefits": [
+      "전액 무료",
+      "네이버 채용 연계",
+      "멘토링"
+    ],
+    "tech_keywords": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js"
+    ],
+    "eligibility": [
+      "개발 경력 2년 미만"
+    ],
+    "summary": "네이버 커넥트재단. 내일배움카드 없이 지원 가능. 수료생 3,100명+.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "daangn_intern",
+    "program_name": "당근 테크 인턴십",
+    "category": "intern",
+    "company_or_org": "당근 (Daangn)",
+    "official_url": "https://about.daangn.com/jobs/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "data",
+      "ai",
+      "mobile"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회 (여름/겨울), 3개월",
+    "application_period": "확인 필요",
+    "program_period": "약 3개월",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "정규직 전환 기회",
+      "실무 프로젝트",
+      "멘토링"
+    ],
+    "tech_keywords": [
+      "Go",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "분산시스템"
+    ],
+    "eligibility": [
+      "졸업(예정)자"
+    ],
+    "summary": "당근마켓 개발자 인턴십. Go/Rust 등 실무 스택. 매년 여름·겨울 운영.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "sesac_bigtech",
+    "program_name": "서울 AI 빅테크캠퍼스",
+    "category": "training",
+    "company_or_org": "서울경제진흥원 / 서울시 / NVIDIA·MS",
+    "official_url": "https://sesac.seoul.kr/",
+    "status": "open",
+    "job_area": [
+      "ai",
+      "cloud",
+      "data"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 2회, 3~5개월",
+    "application_period": "2026.04.13 ~ 2026.05.10 (1차)",
+    "program_period": "2026.05 ~ 2026.09 (예상)",
+    "location": "서울 5개 캠퍼스",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "NVIDIA·MS 현업자 강사",
+      "AI 인증 자격 취득"
+    ],
+    "tech_keywords": [
+      "AI",
+      "CUDA",
+      "Azure",
+      "LLM"
+    ],
+    "eligibility": [
+      "서울 거주 청년"
+    ],
+    "summary": "NVIDIA·Microsoft 참여 AI 특화 무료 교육. 연 450명. ★1차 모집 중★",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "open"
+  },
+  {
+    "id": "elice_track",
+    "program_name": "엘리스트랙 백엔드 부트캠프",
+    "category": "bootcamp",
+    "company_or_org": "엘리스 (Elice)",
+    "official_url": "https://elice.training/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "ai",
+      "data"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 2~3회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "온라인",
+    "online_offline": "온라인",
+    "paid_or_free": "무료 (국비지원)",
+    "benefits": [
+      "채용 연계",
+      "실무 프로젝트"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "Python",
+      "AI"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "B2B AI 교육 플랫폼 엘리스의 부트캠프. 백엔드·AI·데이터 다양한 과정.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "cccr_sw",
+    "program_name": "채용연계형 SW전문인재양성",
+    "category": "hiring_linked_program",
+    "company_or_org": "한국인공지능소프트웨어산업협회 (KISIA)",
+    "official_url": "https://www.cccr-edu.or.kr/main/page.jsp?code=swcamp",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "ai"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "전국 (기업별)",
+    "online_offline": "혼합",
+    "paid_or_free": "무료",
+    "benefits": [
+      "멤버십 기업 취업 연계"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "Python",
+      "AI"
+    ],
+    "eligibility": [
+      "미취업 청년"
+    ],
+    "summary": "중소·벤처기업 컨소시엄 협력. 수료 후 참여 기업 취업 직결.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "codeit_spring",
+    "program_name": "코드잇 스프린트 Spring 백엔드",
+    "category": "bootcamp",
+    "company_or_org": "코드잇 (Codeit)",
+    "official_url": "https://sprint.codeit.kr/track/backend",
+    "status": "recurring",
+    "job_area": [
+      "backend"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 2~3회, 약 7개월",
+    "application_period": "선착순 상시",
+    "program_period": "확인 필요",
+    "location": "온라인 100%",
+    "online_offline": "온라인",
+    "paid_or_free": "무료 (국비 + 훈련장려금 최대 189만원)",
+    "benefits": [
+      "훈련장려금 최대 189만원",
+      "채용 우대",
+      "인턴십 연계"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring Boot",
+      "JPA",
+      "MySQL",
+      "Docker",
+      "AWS"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "Java/Spring 백엔드 특화. 온라인 100%. 훈련장려금 최대 189만원.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "naver_recruit",
+    "program_name": "팀네이버 신입 공채 (Tech)",
+    "category": "intern",
+    "company_or_org": "네이버 (NAVER)",
+    "official_url": "https://recruit.navercorp.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "data",
+      "ai",
+      "cloud"
+    ],
+    "target": [
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회",
+    "application_period": "확인 필요",
+    "program_period": "정규직",
+    "location": "성남 분당",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급 (정규직)",
+    "benefits": [
+      "업계 최고 처우",
+      "기술 성장 환경"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Kotlin",
+      "Python",
+      "Go",
+      "검색"
+    ],
+    "eligibility": [
+      "졸업(예정)자"
+    ],
+    "summary": "네이버 및 계열법인 통합 신입 공채. 연 1~2회 정기 운영.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "posco_dx",
+    "program_name": "포스코DX 청년IT전문가 아카데미",
+    "category": "hiring_linked_program",
+    "company_or_org": "포스코DX",
+    "official_url": "https://www.poscodx.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "ai",
+      "cloud"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "포항 / 서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "포스코DX 채용 직결",
+      "교육비 전액 지원"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "AI",
+      "클라우드"
+    ],
+    "eligibility": [
+      "졸업예정자 또는 미취업자"
+    ],
+    "summary": "포스코그룹 IT 계열사 포스코DX 채용 직결 교육. 수료 우수자 입사 기회.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "programmers_devcourse",
+    "program_name": "프로그래머스 데브코스 백엔드",
+    "category": "bootcamp",
+    "company_or_org": "그렙 (Programmers)",
+    "official_url": "https://school.programmers.co.kr/learn/KDT",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "ai"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "분기별, 9주~5개월",
+    "application_period": "분기별 상시",
+    "program_period": "확인 필요",
+    "location": "서울 + 온라인",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (국비지원)",
+    "benefits": [
+      "코딩테스트 면제 혜택",
+      "프로그래머스 자격증"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "Kubernetes",
+      "Docker",
+      "CI/CD"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "수료 시 기업 코딩테스트 면제 혜택. 백엔드 단기심화(9주)·장기(5개월) 두 트랙.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "softeer",
+    "program_name": "현대자동차그룹 소프티어 부트캠프",
+    "category": "hiring_linked_program",
+    "company_or_org": "현대자동차 / 기아",
+    "official_url": "https://softeerbootcamp.hyundaimotorgroup.com/",
+    "status": "open",
+    "job_area": [
+      "backend",
+      "data"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회, 7~8개월",
+    "application_period": "2026.04.22 ~ 2026.05.11",
+    "program_period": "2026년 하반기",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "현대차/기아 신입 채용 직결",
+      "AI 특화 커리큘럼"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Python",
+      "AI",
+      "데이터엔지니어링"
+    ],
+    "eligibility": [
+      "2026.02~2027.02 졸업(예정)자",
+      "4년제 학사 이상"
+    ],
+    "summary": "현대차·기아 SW 신입 채용 직결 부트캠프. 백엔드/데이터/서비스기획. ★현재 모집 중★",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
+    "id": "kia_intern",
+    "program_name": "기아 전환형 인턴 (ICT/SW)",
+    "category": "intern",
+    "company_or_org": "기아 (KIA)",
+    "official_url": "https://kia-autoworld.com/intern/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "embedded"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 2회 (상반기/하반기), 6주 인턴",
+    "application_period": "상반기: 4월, 하반기: 9월",
+    "program_period": "6주 인턴 후 정규직 전환",
+    "location": "서울 / 화성",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "정규직 전환 (현대차그룹 처우)",
+      "SW/ICT 실무"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Python",
+      "C++",
+      "차량SW"
+    ],
+    "eligibility": [
+      "4년제 학사 이상",
+      "졸업(예정)자"
+    ],
+    "summary": "현대차그룹 기아 SW/ICT 전환형 인턴. 6주 후 정규직 전환 심사. 연 2회.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "multicampus",
+    "program_name": "멀티캠퍼스 SW 부트캠프",
+    "category": "bootcamp",
+    "company_or_org": "멀티캠퍼스 (삼성SDS 계열)",
+    "official_url": "https://m.multicampus.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "cloud"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "연 2~3회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "삼성계열 채용 우대",
+      "취업 컨설팅"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "React",
+      "클라우드"
+    ],
+    "eligibility": [
+      "취업 준비생"
+    ],
+    "summary": "삼성SDS 계열 교육 기업. 풀스택·네트워크 엔지니어 등 과정. 전액 무료.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "likelion_bootcamp",
+    "program_name": "멋쟁이사자처럼 테크 부트캠프",
+    "category": "bootcamp",
+    "company_or_org": "멋쟁이사자처럼 (Likelion)",
+    "official_url": "https://bootcamp.likelion.net/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "ai"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 2회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "온·오프라인",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (국비지원)",
+    "benefits": [
+      "기업 채용 연계",
+      "취업 코칭"
+    ],
+    "tech_keywords": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "React",
+      "AI"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "멋쟁이사자처럼의 취업 전환형 부트캠프. 백엔드·AI 등 다양한 스택.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "ssafy",
+    "program_name": "삼성청년SW·AI아카데미 (SSAFY)",
+    "category": "training",
+    "company_or_org": "삼성전자 / 고용노동부",
+    "official_url": "https://www.ssafy.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "ai"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 2회 모집, 12개월 교육",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "서울·대전·광주·구미·부울경",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료 (월 100만원 지원금)",
+    "benefits": [
+      "월 100만원 교육지원금",
+      "취업 컨설팅",
+      "SW 역량테스트 응시"
+    ],
+    "tech_keywords": [
+      "Python",
+      "Java",
+      "AI",
+      "알고리즘"
+    ],
+    "eligibility": [
+      "만 29세 이하",
+      "4년제 졸업(예정)자"
+    ],
+    "summary": "삼성전자 운영 대한민국 최대 SW 교육 프로그램. AI 커리큘럼 강화(SSAFY 2.0). 취업률·인지도 최상.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "woowacourse",
+    "program_name": "우아한테크코스 (우테코)",
+    "category": "training",
+    "company_or_org": "우아한형제들 (배달의민족)",
+    "official_url": "https://www.woowacourse.io/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "mobile"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1회, 10개월",
+    "application_period": "매년 9~10월",
+    "program_period": "2월 ~ 11월",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "전액 무료",
+      "우아한형제들 채용 우대",
+      "코드리뷰 문화"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "React",
+      "Android",
+      "TDD"
+    ],
+    "eligibility": [
+      "전공 무관",
+      "누구나"
+    ],
+    "summary": "배달의민족 운영. 백엔드(Java/Spring)·프론트·안드로이드 3개 트랙. 코드 품질·협업 특화.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "kakao_newbie",
+    "program_name": "카카오 신입크루 공채",
+    "category": "intern",
+    "company_or_org": "카카오 (Kakao)",
+    "official_url": "https://careers.kakao.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "data",
+      "ai",
+      "mobile"
+    ],
+    "target": [
+      "graduate"
+    ],
+    "schedule_summary": "연 1회",
+    "application_period": "확인 필요",
+    "program_period": "정규직",
+    "location": "판교",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급 (정규직)",
+    "benefits": [
+      "업계 최고 수준 처우",
+      "스톡옵션"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Kotlin",
+      "Python",
+      "Go",
+      "MSA"
+    ],
+    "eligibility": [
+      "졸업 후 일정 기간 내"
+    ],
+    "summary": "카카오 신입 개발자 공채. Tech·Service·Design 및 자회사 통합 모집.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "kakao_intern",
+    "program_name": "카카오 채용연계형 인턴십 (Tech)",
+    "category": "intern",
+    "company_or_org": "카카오 (Kakao)",
+    "official_url": "https://careers.kakao.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "data",
+      "ai"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회 (여름/겨울), 2개월",
+    "application_period": "확인 필요",
+    "program_period": "약 2개월",
+    "location": "판교",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "정규직 전환 기회",
+      "카카오 실무 환경"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Kotlin",
+      "Python",
+      "Go",
+      "MSA"
+    ],
+    "eligibility": [
+      "재학생 또는 졸업예정자"
+    ],
+    "summary": "카카오 테크 채용연계 인턴. 2개월 후 정규직 전환 심사. 매년 여름·겨울 운영.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "kakao_bootcamp",
+    "program_name": "카카오테크 부트캠프",
+    "category": "bootcamp",
+    "company_or_org": "카카오 / RAPA",
+    "official_url": "https://kakaotechbootcamp.com/",
+    "status": "recurring",
+    "job_area": [
+      "fullstack",
+      "ai",
+      "cloud"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate",
+      "student"
+    ],
+    "schedule_summary": "연 1회, 6개월",
+    "application_period": "매년 2~3월",
+    "program_period": "5월 ~ 11월",
+    "location": "온·오프라인 병행",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (국비지원)",
+    "benefits": [
+      "국비 전액",
+      "카카오 계열 채용 우대"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "React",
+      "Python",
+      "AI",
+      "Kubernetes"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "카카오 직접 운영. 풀스택·AI·클라우드 3개 과정 각 50명. 카카오 생태계 취업 연계.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "fastcampus_kernel",
+    "program_name": "커널아카데미 AI 부트캠프 (w. Upstage)",
+    "category": "bootcamp",
+    "company_or_org": "패스트캠퍼스 / Upstage",
+    "official_url": "https://kernel.fastcampus.co.kr/180_ai",
+    "status": "recurring",
+    "job_area": [
+      "ai",
+      "data",
+      "backend"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "약 5~6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "온라인",
+    "online_offline": "온라인",
+    "paid_or_free": "무료 (KDT 국비지원)",
+    "benefits": [
+      "Upstage 현업자 멘토링",
+      "채용 연계"
+    ],
+    "tech_keywords": [
+      "Python",
+      "LLM",
+      "RAG",
+      "AI모델",
+      "MLOps"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "패스트캠퍼스×Upstage. AI 실무 개발 특화. KDT 공식 훈련기관.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "toss_next",
+    "program_name": "토스 NEXT 개발자 챌린지",
+    "category": "hiring_linked_program",
+    "company_or_org": "토스 (비바리퍼블리카)",
+    "official_url": "https://toss.im/career/jobs",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "mobile"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "비정기 (연 1회 내외)",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "서울 강남",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "토스 정규직 입사",
+      "업계 최고 처우"
+    ],
+    "tech_keywords": [
+      "Kotlin",
+      "Java",
+      "Spring",
+      "MSA",
+      "금융 서비스"
+    ],
+    "eligibility": [
+      "경력 3년 이하 개발자 (신입 포함)"
+    ],
+    "summary": "실력 중심 채용. 코딩으로 선발 후 토스 정규 입사. 연봉·처우 업계 최고 수준.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "kt_aivle",
+    "program_name": "KT 에이블스쿨 (AIVLE School)",
+    "category": "training",
+    "company_or_org": "KT / 고용노동부",
+    "official_url": "https://aivle.kt.co.kr/",
+    "status": "recurring",
+    "job_area": [
+      "ai",
+      "data",
+      "cloud"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1~2회, 5~6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "전국 (온·오프라인)",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (KDT 국비지원)",
+    "benefits": [
+      "KT 채용 우대",
+      "AI 자격증 지원"
+    ],
+    "tech_keywords": [
+      "Python",
+      "AI",
+      "Cloud",
+      "DX",
+      "MLOps"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "KT·고용노동부 공동 운영 AI/DX 인재 양성. AI 개발자·DX 컨설턴트 트랙.",
+    "http_status": 403,
+    "url_reachable": false,
+    "detected_status": "unclear"
+  },
+  {
+    "id": "estsoft_bootcamp",
+    "program_name": "이스트소프트 이스트캠프 AI·백엔드",
+    "category": "bootcamp",
+    "company_or_org": "이스트소프트 (ESTsoft)",
+    "official_url": "https://estbootcamp.co.kr/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "ai"
+    ],
+    "target": [
+      "job_seeker",
+      "graduate"
+    ],
+    "schedule_summary": "약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "서울 + 온라인",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (KDT 국비지원)",
+    "benefits": [
+      "이스트소프트 채용 우대",
+      "AI 모델 개발 실습"
+    ],
+    "tech_keywords": [
+      "Python",
+      "AI",
+      "FastAPI",
+      "LLM",
+      "백엔드"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "KDT 공식 훈련기관. AI기획·백엔드·AI모델개발 트랙.",
+    "http_status": 403,
+    "url_reachable": false,
+    "detected_status": "unclear"
+  },
+  {
+    "id": "sesac",
+    "program_name": "청년취업사관학교 새싹 (SeSAC)",
+    "category": "bootcamp",
+    "company_or_org": "서울경제진흥원 (SBA) / 서울시",
+    "official_url": "https://sesac.seoul.kr/",
+    "status": "open",
+    "job_area": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "ai",
+      "data"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "상시 (과정별 상이), 3~6개월",
+    "application_period": "과정별 상시",
+    "program_period": "과정별 상이",
+    "location": "서울 여러 캠퍼스",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료 (예치금 10만원 수료 후 환급)",
+    "benefits": [
+      "전액 무료",
+      "점심 제공",
+      "기업 네트워킹"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Python",
+      "React",
+      "AI",
+      "클라우드"
+    ],
+    "eligibility": [
+      "서울 거주 청년 (만 15세 이상)"
+    ],
+    "summary": "서울시 운영 무료 IT 교육. 백엔드·프론트·AI 등 다양한 과정 상시 운영.",
+    "http_status": 404,
+    "url_reachable": false,
+    "detected_status": "unclear"
+  },
+  {
+    "id": "krafton_jungle",
+    "program_name": "크래프톤 정글 (SW-AI랩)",
+    "category": "training",
+    "company_or_org": "크래프톤 (KRAFTON)",
+    "official_url": "https://jungle.krafton.com/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "ai"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1~2회, 5개월 합숙",
+    "application_period": "매년 12월~1월",
+    "program_period": "3월 개강",
+    "location": "경기도 용인 (합숙)",
+    "online_offline": "오프라인",
+    "paid_or_free": "일부 유료 (장학금 있음)",
+    "benefits": [
+      "크래프톤 채용 우대",
+      "CS 완성",
+      "AI 프로젝트"
+    ],
+    "tech_keywords": [
+      "C",
+      "Python",
+      "알고리즘",
+      "OS",
+      "네트워크",
+      "AI"
+    ],
+    "eligibility": [
+      "전공 무관"
+    ],
+    "summary": "크래프톤 운영 CS 몰입 교육. 5개월 합숙으로 CS 기초 완성. SW-AI랩·게임랩 트랙.",
+    "http_status": 404,
+    "url_reachable": false,
+    "detected_status": "unclear"
+  }
+]

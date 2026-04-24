@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국 개발자 기회 모음 | Dev Opportunities KR</title>
+<meta name="description" content="한국의 개발 인턴십·부트캠프·채용연계 교육 프로그램을 매일 자동 업데이트합니다.">
+<style>
+
+:root {
+  --bg: #0f1117; --surface: #1a1d27; --surface2: #22263a;
+  --border: #2d3248; --text: #e2e8f0; --text-muted: #8892a4;
+  --accent: #6366f1; --accent2: #818cf8;
+  --open: #10b981; --closed: #ef4444; --recurring: #f59e0b;
+  --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,.4);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.6;
+}
+.hero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 60%, #1a1d27 100%);
+  padding: 60px 24px 48px; text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(99,102,241,.15) 0%, transparent 70%);
+}
+.hero-badge {
+  display: inline-block; background: rgba(99,102,241,.2);
+  border: 1px solid rgba(99,102,241,.4); color: var(--accent2);
+  padding: 4px 14px; border-radius: 999px;
+  font-size: .8rem; font-weight: 600; letter-spacing: .05em; margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800;
+  background: linear-gradient(135deg, #e0e7ff, #818cf8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 12px;
+}
+.hero-sub { color: var(--text-muted); font-size: 1rem; margin-bottom: 24px; }
+.hero-stats { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 800; color: var(--accent2); }
+.stat-label { font-size: .8rem; color: var(--text-muted); }
+.updated-at { margin-top: 20px; font-size: .75rem; color: var(--text-muted); }
+
+.controls {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(15,17,23,.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); padding: 14px 24px;
+}
+.controls-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+}
+.search-box { flex: 1; min-width: 200px; position: relative; }
+.search-box input {
+  width: 100%; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px 8px 36px;
+  color: var(--text); font-size: .9rem; outline: none; transition: border-color .2s;
+}
+.search-box input:focus { border-color: var(--accent); }
+.search-box::before {
+  content: '🔍'; position: absolute; left: 10px;
+  top: 50%; transform: translateY(-50%); font-size: .85rem;
+}
+.filter-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.filter-label { font-size: .75rem; color: var(--text-muted); white-space: nowrap; }
+.filter-btn {
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-muted); padding: 5px 12px; border-radius: 6px;
+  font-size: .8rem; cursor: pointer; transition: all .2s; white-space: nowrap;
+}
+.filter-btn:hover, .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.filter-btn.s-open.active   { background: var(--open);      border-color: var(--open); }
+.filter-btn.s-closed.active { background: var(--closed);    border-color: var(--closed); }
+.filter-btn.s-rec.active    { background: var(--recurring); border-color: var(--recurring); }
+
+.main { max-width: 1280px; margin: 0 auto; padding: 32px 24px 80px; }
+.result-count { font-size: .85rem; color: var(--text-muted); margin-bottom: 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); display: flex; flex-direction: column;
+  transition: transform .2s, box-shadow .2s, border-color .2s; overflow: hidden;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent); }
+.card.hidden { display: none; }
+.card-header {
+  padding: 20px 20px 12px; border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface2) 0%, var(--surface) 100%);
+}
+.card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.cat-label {
+  font-size: .7rem; color: var(--text-muted); background: var(--bg);
+  padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border);
+}
+.card-title { font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
+.card-org { font-size: .8rem; color: var(--text-muted); }
+.card-body { padding: 16px 20px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.card-summary { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+.card-areas { display: flex; flex-wrap: wrap; gap: 4px; }
+.card-info { display: flex; flex-direction: column; gap: 6px; }
+.info-row { display: flex; align-items: flex-start; gap: 8px; font-size: .82rem; color: var(--text-muted); }
+.info-icon { flex-shrink: 0; }
+.info-row strong { color: var(--text); }
+.card-benefits { padding-left: 16px; font-size: .8rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px; }
+.card-benefits li::marker { color: var(--accent); }
+.card-techs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.card-footer { padding: 14px 20px; border-top: 1px solid var(--border); }
+
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .04em; }
+.status-open      { background: rgba(16,185,129,.2); color: #34d399; border: 1px solid rgba(16,185,129,.3); }
+.status-closed    { background: rgba(239,68,68,.15); color: #f87171; border: 1px solid rgba(239,68,68,.3); }
+.status-recurring { background: rgba(245,158,11,.15); color: #fbbf24; border: 1px solid rgba(245,158,11,.3); }
+.status-unclear   { background: rgba(100,116,139,.15); color: #94a3b8; border: 1px solid rgba(100,116,139,.3); }
+.tag { display: inline-block; background: rgba(99,102,241,.15); color: var(--accent2); border: 1px solid rgba(99,102,241,.25); padding: 2px 8px; border-radius: 4px; font-size: .72rem; font-weight: 500; }
+.tag-tech { display: inline-block; background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); padding: 2px 7px; border-radius: 4px; font-size: .7rem; }
+.btn-official { display: block; text-align: center; background: linear-gradient(135deg, var(--accent), #4f46e5); color: #fff; padding: 9px 16px; border-radius: 8px; text-decoration: none; font-size: .85rem; font-weight: 600; transition: opacity .2s; }
+.btn-official:hover { opacity: .85; }
+
+footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .8rem; }
+footer a { color: var(--accent2); text-decoration: none; }
+@media (max-width: 600px) {
+  .hero { padding: 40px 16px 32px; }
+  .main { padding: 20px 12px 60px; }
+  .grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-badge">🇰🇷 Daily Updated</div>
+  <h1>한국 개발자 기회 모음</h1>
+  <p class="hero-sub">인턴십 · 부트캠프 · 채용연계 교육 프로그램 · 공채</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">25</div><div class="stat-label">전체 프로그램</div></div>
+    <div class="stat"><div class="stat-num">11</div><div class="stat-label">현재 모집중</div></div>
+  </div>
+  <p class="updated-at">마지막 업데이트: 2026-04-24 16:03 (KST)</p>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="프로그램명, 기업명, 기술 검색...">
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">상태</span>
+      <button class="filter-btn active" data-filter="status" data-value="all">전체</button>
+      <button class="filter-btn s-open" data-filter="status" data-value="open">모집중</button>
+      <button class="filter-btn s-rec" data-filter="status" data-value="recurring">정기모집</button>
+      <button class="filter-btn s-closed" data-filter="status" data-value="closed">마감</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">유형</span>
+      <button class="filter-btn active" data-filter="category" data-value="all">전체</button>
+      <button class="filter-btn" data-filter="category" data-value="intern">인턴십</button>
+      <button class="filter-btn" data-filter="category" data-value="bootcamp">부트캠프</button>
+      <button class="filter-btn" data-filter="category" data-value="training">교육</button>
+      <button class="filter-btn" data-filter="category" data-value="hiring_linked_program">채용연계</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">분야</span>
+      <button class="filter-btn active" data-filter="area" data-value="all">전체</button>
+      <button class="filter-btn" data-filter="area" data-value="backend">백엔드</button>
+      <button class="filter-btn" data-filter="area" data-value="frontend">프론트</button>
+      <button class="filter-btn" data-filter="area" data-value="ai">AI</button>
+      <button class="filter-btn" data-filter="area" data-value="fullstack">풀스택</button>
+      <button class="filter-btn" data-filter="area" data-value="data">데이터</button>
+      <button class="filter-btn" data-filter="area" data-value="cloud">클라우드</button>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+  <p class="result-count" id="result-count">25개 프로그램</p>
+  <div class="grid" id="card-grid">
+<article class="card" data-category="bootcamp" data-status="open" data-area="ai data">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">네이버 부스트캠프 AI Tech</h2>
+    <p class="card-org">네이버 커넥트재단</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">AI/ML 특화. 딥러닝·NLP·컴퓨터비전 실무형 AI 개발자 양성.</p>
+    <div class="card-areas"><span class="tag">AI</span> <span class="tag">데이터</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>매년 7~8월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온라인 (온라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>전액 무료</li><li>AI 기업 채용 연계</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">PyTorch</span> <span class="tag-tech">딥러닝</span> <span class="tag-tech">NLP</span> <span class="tag-tech">CV</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://boostcamp.connect.or.kr/guide_ai.html" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="open" data-area="fullstack mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">네이버 부스트캠프 웹·모바일</h2>
+    <p class="card-org">네이버 커넥트재단</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">네이버 커넥트재단. 내일배움카드 없이 지원 가능. 수료생 3,100명+.</p>
+    <div class="card-areas"><span class="tag">풀스택</span> <span class="tag">모바일</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>매년 5~6월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온라인 (온라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (내일배움카드 불필요)</span></div>
+    </div>
+    <ul class="card-benefits"><li>전액 무료</li><li>네이버 채용 연계</li><li>멘토링</li></ul>
+    <div class="card-techs"><span class="tag-tech">JavaScript</span> <span class="tag-tech">TypeScript</span> <span class="tag-tech">React</span> <span class="tag-tech">Node.js</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://boostcamp.connect.or.kr/guide_wm.html" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="intern" data-status="open" data-area="backend frontend data ai mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">인턴십</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">당근 테크 인턴십</h2>
+    <p class="card-org">당근 (Daangn)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">당근마켓 개발자 인턴십. Go/Rust 등 실무 스택. 매년 여름·겨울 운영.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">데이터</span> <span class="tag">AI</span> <span class="tag">모바일</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급</span></div>
+    </div>
+    <ul class="card-benefits"><li>정규직 전환 기회</li><li>실무 프로젝트</li><li>멘토링</li></ul>
+    <div class="card-techs"><span class="tag-tech">Go</span> <span class="tag-tech">Kotlin</span> <span class="tag-tech">Swift</span> <span class="tag-tech">Rust</span> <span class="tag-tech">분산시스템</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://about.daangn.com/jobs/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="training" data-status="open" data-area="ai cloud data">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">교육 프로그램</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">서울 AI 빅테크캠퍼스</h2>
+    <p class="card-org">서울경제진흥원 / 서울시 / NVIDIA·MS</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">NVIDIA·Microsoft 참여 AI 특화 무료 교육. 연 450명. ★1차 모집 중★</p>
+    <div class="card-areas"><span class="tag">AI</span> <span class="tag">클라우드</span> <span class="tag">데이터</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>2026.04.13 ~ 2026.05.10 (1차)</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 5개 캠퍼스 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>NVIDIA·MS 현업자 강사</li><li>AI 인증 자격 취득</li></ul>
+    <div class="card-techs"><span class="tag-tech">AI</span> <span class="tag-tech">CUDA</span> <span class="tag-tech">Azure</span> <span class="tag-tech">LLM</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://sesac.seoul.kr/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="open" data-area="backend fullstack ai data">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">엘리스트랙 백엔드 부트캠프</h2>
+    <p class="card-org">엘리스 (Elice)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">B2B AI 교육 플랫폼 엘리스의 부트캠프. 백엔드·AI·데이터 다양한 과정.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span> <span class="tag">데이터</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온라인 (온라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>채용 연계</li><li>실무 프로젝트</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">Python</span> <span class="tag-tech">AI</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://elice.training/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="hiring_linked_program" data-status="open" data-area="backend fullstack ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">채용연계형</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">채용연계형 SW전문인재양성</h2>
+    <p class="card-org">한국인공지능소프트웨어산업협회 (KISIA)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">중소·벤처기업 컨소시엄 협력. 수료 후 참여 기업 취업 직결.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>전국 (기업별) (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>멤버십 기업 취업 연계</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">Python</span> <span class="tag-tech">AI</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.cccr-edu.or.kr/main/page.jsp?code=swcamp" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="open" data-area="backend">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">코드잇 스프린트 Spring 백엔드</h2>
+    <p class="card-org">코드잇 (Codeit)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">Java/Spring 백엔드 특화. 온라인 100%. 훈련장려금 최대 189만원.</p>
+    <div class="card-areas"><span class="tag">백엔드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>선착순 상시</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온라인 100% (온라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (국비 + 훈련장려금 최대 189만원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>훈련장려금 최대 189만원</li><li>채용 우대</li><li>인턴십 연계</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring Boot</span> <span class="tag-tech">JPA</span> <span class="tag-tech">MySQL</span> <span class="tag-tech">Docker</span> <span class="tag-tech">AWS</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://sprint.codeit.kr/track/backend" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="intern" data-status="open" data-area="backend frontend data ai cloud">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">인턴십</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">팀네이버 신입 공채 (Tech)</h2>
+    <p class="card-org">네이버 (NAVER)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">네이버 및 계열법인 통합 신입 공채. 연 1~2회 정기 운영.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">데이터</span> <span class="tag">AI</span> <span class="tag">클라우드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>성남 분당 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급 (정규직)</span></div>
+    </div>
+    <ul class="card-benefits"><li>업계 최고 처우</li><li>기술 성장 환경</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Kotlin</span> <span class="tag-tech">Python</span> <span class="tag-tech">Go</span> <span class="tag-tech">검색</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://recruit.navercorp.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="hiring_linked_program" data-status="open" data-area="backend fullstack ai cloud">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">채용연계형</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">포스코DX 청년IT전문가 아카데미</h2>
+    <p class="card-org">포스코DX</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">포스코그룹 IT 계열사 포스코DX 채용 직결 교육. 수료 우수자 입사 기회.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span> <span class="tag">클라우드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>포항 / 서울 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>포스코DX 채용 직결</li><li>교육비 전액 지원</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">AI</span> <span class="tag-tech">클라우드</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.poscodx.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="open" data-area="backend ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">프로그래머스 데브코스 백엔드</h2>
+    <p class="card-org">그렙 (Programmers)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">수료 시 기업 코딩테스트 면제 혜택. 백엔드 단기심화(9주)·장기(5개월) 두 트랙.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>분기별 상시</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 + 온라인 (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>코딩테스트 면제 혜택</li><li>프로그래머스 자격증</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">Kubernetes</span> <span class="tag-tech">Docker</span> <span class="tag-tech">CI/CD</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://school.programmers.co.kr/learn/KDT" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="hiring_linked_program" data-status="open" data-area="backend data">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">채용연계형</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">현대자동차그룹 소프티어 부트캠프</h2>
+    <p class="card-org">현대자동차 / 기아</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">현대차·기아 SW 신입 채용 직결 부트캠프. 백엔드/데이터/서비스기획. ★현재 모집 중★</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">데이터</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>2026.04.22 ~ 2026.05.11</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>현대차/기아 신입 채용 직결</li><li>AI 특화 커리큘럼</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Python</span> <span class="tag-tech">AI</span> <span class="tag-tech">데이터엔지니어링</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://softeerbootcamp.hyundaimotorgroup.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="intern" data-status="recurring" data-area="backend fullstack embedded">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">인턴십</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">기아 전환형 인턴 (ICT/SW)</h2>
+    <p class="card-org">기아 (KIA)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">현대차그룹 기아 SW/ICT 전환형 인턴. 6주 후 정규직 전환 심사. 연 2회.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">풀스택</span> <span class="tag">임베디드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>상반기: 4월, 하반기: 9월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 / 화성 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급</span></div>
+    </div>
+    <ul class="card-benefits"><li>정규직 전환 (현대차그룹 처우)</li><li>SW/ICT 실무</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Python</span> <span class="tag-tech">C++</span> <span class="tag-tech">차량SW</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://kia-autoworld.com/intern/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="recurring" data-area="backend fullstack cloud">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">멀티캠퍼스 SW 부트캠프</h2>
+    <p class="card-org">멀티캠퍼스 (삼성SDS 계열)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">삼성SDS 계열 교육 기업. 풀스택·네트워크 엔지니어 등 과정. 전액 무료.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">풀스택</span> <span class="tag">클라우드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>삼성계열 채용 우대</li><li>취업 컨설팅</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">React</span> <span class="tag-tech">클라우드</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://m.multicampus.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="recurring" data-area="backend frontend fullstack ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">멋쟁이사자처럼 테크 부트캠프</h2>
+    <p class="card-org">멋쟁이사자처럼 (Likelion)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">멋쟁이사자처럼의 취업 전환형 부트캠프. 백엔드·AI 등 다양한 스택.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온·오프라인 (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>기업 채용 연계</li><li>취업 코칭</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">Django</span> <span class="tag-tech">JavaScript</span> <span class="tag-tech">React</span> <span class="tag-tech">AI</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://bootcamp.likelion.net/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="training" data-status="recurring" data-area="backend frontend fullstack ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">교육 프로그램</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">삼성청년SW·AI아카데미 (SSAFY)</h2>
+    <p class="card-org">삼성전자 / 고용노동부</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">삼성전자 운영 대한민국 최대 SW 교육 프로그램. AI 커리큘럼 강화(SSAFY 2.0). 취업률·인지도 최상.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울·대전·광주·구미·부울경 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (월 100만원 지원금)</span></div>
+    </div>
+    <ul class="card-benefits"><li>월 100만원 교육지원금</li><li>취업 컨설팅</li><li>SW 역량테스트 응시</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">Java</span> <span class="tag-tech">AI</span> <span class="tag-tech">알고리즘</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.ssafy.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="training" data-status="recurring" data-area="backend frontend mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">교육 프로그램</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">우아한테크코스 (우테코)</h2>
+    <p class="card-org">우아한형제들 (배달의민족)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">배달의민족 운영. 백엔드(Java/Spring)·프론트·안드로이드 3개 트랙. 코드 품질·협업 특화.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">모바일</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>매년 9~10월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료</span></div>
+    </div>
+    <ul class="card-benefits"><li>전액 무료</li><li>우아한형제들 채용 우대</li><li>코드리뷰 문화</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">React</span> <span class="tag-tech">Android</span> <span class="tag-tech">TDD</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.woowacourse.io/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="intern" data-status="recurring" data-area="backend frontend data ai mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">인턴십</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">카카오 신입크루 공채</h2>
+    <p class="card-org">카카오 (Kakao)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">카카오 신입 개발자 공채. Tech·Service·Design 및 자회사 통합 모집.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">데이터</span> <span class="tag">AI</span> <span class="tag">모바일</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>판교 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급 (정규직)</span></div>
+    </div>
+    <ul class="card-benefits"><li>업계 최고 수준 처우</li><li>스톡옵션</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Kotlin</span> <span class="tag-tech">Python</span> <span class="tag-tech">Go</span> <span class="tag-tech">MSA</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://careers.kakao.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="intern" data-status="recurring" data-area="backend frontend data ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">인턴십</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">카카오 채용연계형 인턴십 (Tech)</h2>
+    <p class="card-org">카카오 (Kakao)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">카카오 테크 채용연계 인턴. 2개월 후 정규직 전환 심사. 매년 여름·겨울 운영.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">데이터</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>판교 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급</span></div>
+    </div>
+    <ul class="card-benefits"><li>정규직 전환 기회</li><li>카카오 실무 환경</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Kotlin</span> <span class="tag-tech">Python</span> <span class="tag-tech">Go</span> <span class="tag-tech">MSA</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://careers.kakao.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="recurring" data-area="fullstack ai cloud">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">카카오테크 부트캠프</h2>
+    <p class="card-org">카카오 / RAPA</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">카카오 직접 운영. 풀스택·AI·클라우드 3개 과정 각 50명. 카카오 생태계 취업 연계.</p>
+    <div class="card-areas"><span class="tag">풀스택</span> <span class="tag">AI</span> <span class="tag">클라우드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>매년 2~3월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온·오프라인 병행 (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>국비 전액</li><li>카카오 계열 채용 우대</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">React</span> <span class="tag-tech">Python</span> <span class="tag-tech">AI</span> <span class="tag-tech">Kubernetes</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://kakaotechbootcamp.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="recurring" data-area="ai data backend">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">커널아카데미 AI 부트캠프 (w. Upstage)</h2>
+    <p class="card-org">패스트캠퍼스 / Upstage</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">패스트캠퍼스×Upstage. AI 실무 개발 특화. KDT 공식 훈련기관.</p>
+    <div class="card-areas"><span class="tag">AI</span> <span class="tag">데이터</span> <span class="tag">백엔드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>온라인 (온라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (KDT 국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>Upstage 현업자 멘토링</li><li>채용 연계</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">LLM</span> <span class="tag-tech">RAG</span> <span class="tag-tech">AI모델</span> <span class="tag-tech">MLOps</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://kernel.fastcampus.co.kr/180_ai" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="hiring_linked_program" data-status="recurring" data-area="backend frontend mobile">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">채용연계형</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">토스 NEXT 개발자 챌린지</h2>
+    <p class="card-org">토스 (비바리퍼블리카)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">실력 중심 채용. 코딩으로 선발 후 토스 정규 입사. 연봉·처우 업계 최고 수준.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">모바일</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 강남 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>유급</span></div>
+    </div>
+    <ul class="card-benefits"><li>토스 정규직 입사</li><li>업계 최고 처우</li></ul>
+    <div class="card-techs"><span class="tag-tech">Kotlin</span> <span class="tag-tech">Java</span> <span class="tag-tech">Spring</span> <span class="tag-tech">MSA</span> <span class="tag-tech">금융 서비스</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://toss.im/career/jobs" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="training" data-status="recurring" data-area="ai data cloud">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">교육 프로그램</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">KT 에이블스쿨 (AIVLE School)</h2>
+    <p class="card-org">KT / 고용노동부</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">KT·고용노동부 공동 운영 AI/DX 인재 양성. AI 개발자·DX 컨설턴트 트랙.</p>
+    <div class="card-areas"><span class="tag">AI</span> <span class="tag">데이터</span> <span class="tag">클라우드</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>전국 (온·오프라인) (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (KDT 국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>KT 채용 우대</li><li>AI 자격증 지원</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">AI</span> <span class="tag-tech">Cloud</span> <span class="tag-tech">DX</span> <span class="tag-tech">MLOps</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://aivle.kt.co.kr/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="recurring" data-area="backend ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">이스트소프트 이스트캠프 AI·백엔드</h2>
+    <p class="card-org">이스트소프트 (ESTsoft)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">KDT 공식 훈련기관. AI기획·백엔드·AI모델개발 트랙.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>확인 필요</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 + 온라인 (혼합)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (KDT 국비지원)</span></div>
+    </div>
+    <ul class="card-benefits"><li>이스트소프트 채용 우대</li><li>AI 모델 개발 실습</li></ul>
+    <div class="card-techs"><span class="tag-tech">Python</span> <span class="tag-tech">AI</span> <span class="tag-tech">FastAPI</span> <span class="tag-tech">LLM</span> <span class="tag-tech">백엔드</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://estbootcamp.co.kr/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="bootcamp" data-status="open" data-area="backend frontend fullstack ai data">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">부트캠프</span>
+      <span class="badge status-open">모집중</span>
+    </div>
+    <h2 class="card-title">청년취업사관학교 새싹 (SeSAC)</h2>
+    <p class="card-org">서울경제진흥원 (SBA) / 서울시</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">서울시 운영 무료 IT 교육. 백엔드·프론트·AI 등 다양한 과정 상시 운영.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">프론트엔드</span> <span class="tag">풀스택</span> <span class="tag">AI</span> <span class="tag">데이터</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>과정별 상시</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>서울 여러 캠퍼스 (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>무료 (예치금 10만원 수료 후 환급)</span></div>
+    </div>
+    <ul class="card-benefits"><li>전액 무료</li><li>점심 제공</li><li>기업 네트워킹</li></ul>
+    <div class="card-techs"><span class="tag-tech">Java</span> <span class="tag-tech">Python</span> <span class="tag-tech">React</span> <span class="tag-tech">AI</span> <span class="tag-tech">클라우드</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://sesac.seoul.kr/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+
+<article class="card" data-category="training" data-status="recurring" data-area="backend ai">
+  <div class="card-header">
+    <div class="card-meta">
+      <span class="cat-label">교육 프로그램</span>
+      <span class="badge status-recurring">정기모집</span>
+    </div>
+    <h2 class="card-title">크래프톤 정글 (SW-AI랩)</h2>
+    <p class="card-org">크래프톤 (KRAFTON)</p>
+  </div>
+  <div class="card-body">
+    <p class="card-summary">크래프톤 운영 CS 몰입 교육. 5개월 합숙으로 CS 기초 완성. SW-AI랩·게임랩 트랙.</p>
+    <div class="card-areas"><span class="tag">백엔드</span> <span class="tag">AI</span></div>
+    <div class="card-info">
+      <div class="info-row"><span class="info-icon">📅</span><span>모집 기간: <strong>매년 12월~1월</strong></span></div>
+      <div class="info-row"><span class="info-icon">📍</span><span>경기도 용인 (합숙) (오프라인)</span></div>
+      <div class="info-row"><span class="info-icon">💰</span><span>일부 유료 (장학금 있음)</span></div>
+    </div>
+    <ul class="card-benefits"><li>크래프톤 채용 우대</li><li>CS 완성</li><li>AI 프로젝트</li></ul>
+    <div class="card-techs"><span class="tag-tech">C</span> <span class="tag-tech">Python</span> <span class="tag-tech">알고리즘</span> <span class="tag-tech">OS</span> <span class="tag-tech">네트워크</span> <span class="tag-tech">AI</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://jungle.krafton.com/" target="_blank" rel="noopener" class="btn-official">공식 사이트 →</a>
+  </div>
+</article>
+  </div>
+</main>
+
+<footer>
+  <p>매일 09:00 KST 자동 업데이트 · 공식 사이트 정보 기준 · 최종 확인 필수</p>
+  <p style="margin-top:8px"><a href="https://github.com" target="_blank">GitHub</a> · 오류 제보는 Issues로 부탁드립니다</p>
+</footer>
+
+<script>
+
+(function() {
+  const grid = document.getElementById('card-grid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const countEl = document.getElementById('result-count');
+  const searchInput = document.getElementById('search');
+  const filters = { status: 'all', category: 'all', area: 'all' };
+
+  function applyFilters() {
+    const q = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+    cards.forEach(card => {
+      const status   = card.dataset.status   || '';
+      const category = card.dataset.category || '';
+      const areas    = (card.dataset.area    || '').split(' ');
+      const text     = card.textContent.toLowerCase();
+
+      const ok = (filters.status   === 'all' || status    === filters.status)
+              && (filters.category === 'all' || category  === filters.category)
+              && (filters.area     === 'all' || areas.includes(filters.area))
+              && (!q || text.includes(q));
+
+      card.classList.toggle('hidden', !ok);
+      if (ok) visible++;
+    });
+    countEl.textContent = visible + '개 프로그램';
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const type  = btn.dataset.filter;
+      const value = btn.dataset.value;
+      filters[type] = value;
+      document.querySelectorAll(`.filter-btn[data-filter="${type}"]`)
+        .forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilters();
+    });
+  });
+
+  let timer;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(applyFilters, 200);
+  });
+
+  applyFilters();
+})();
+
+</script>
+</body>
+</html>
