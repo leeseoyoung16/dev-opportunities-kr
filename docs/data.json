@@ -82,51 +82,6 @@
     "display_status": "open"
   },
   {
-    "id": "daangn_intern",
-    "program_name": "당근 테크 인턴십",
-    "category": "intern",
-    "company_or_org": "당근 (Daangn)",
-    "official_url": "https://about.daangn.com/jobs/",
-    "status": "recurring",
-    "job_area": [
-      "backend",
-      "frontend",
-      "data",
-      "ai",
-      "mobile"
-    ],
-    "target": [
-      "student",
-      "graduate"
-    ],
-    "schedule_summary": "연 1~2회 (여름/겨울), 3개월",
-    "application_period": "확인 필요",
-    "program_period": "약 3개월",
-    "location": "서울",
-    "online_offline": "오프라인",
-    "paid_or_free": "유급",
-    "benefits": [
-      "정규직 전환 기회",
-      "실무 프로젝트",
-      "멘토링"
-    ],
-    "tech_keywords": [
-      "Go",
-      "Kotlin",
-      "Swift",
-      "Rust",
-      "분산시스템"
-    ],
-    "eligibility": [
-      "졸업(예정)자"
-    ],
-    "summary": "당근마켓 개발자 인턴십. Go/Rust 등 실무 스택. 매년 여름·겨울 운영.",
-    "http_status": 200,
-    "url_reachable": true,
-    "detected_status": "open",
-    "display_status": "open"
-  },
-  {
     "id": "sesac_bigtech",
     "program_name": "서울 AI 빅테크캠퍼스",
     "category": "training",
@@ -495,6 +450,51 @@
       "졸업(예정)자"
     ],
     "summary": "현대차그룹 기아 SW/ICT 전환형 인턴. 6주 후 정규직 전환 심사. 연 2회.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
+    "id": "daangn_intern",
+    "program_name": "당근 테크 인턴십",
+    "category": "intern",
+    "company_or_org": "당근 (Daangn)",
+    "official_url": "https://about.daangn.com/jobs/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "data",
+      "ai",
+      "mobile"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 1~2회 (여름/겨울), 3개월",
+    "application_period": "확인 필요",
+    "program_period": "약 3개월",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "정규직 전환 기회",
+      "실무 프로젝트",
+      "멘토링"
+    ],
+    "tech_keywords": [
+      "Go",
+      "Kotlin",
+      "Swift",
+      "Rust",
+      "분산시스템"
+    ],
+    "eligibility": [
+      "졸업(예정)자"
+    ],
+    "summary": "당근마켓 개발자 인턴십. Go/Rust 등 실무 스택. 매년 여름·겨울 운영.",
     "http_status": 200,
     "url_reachable": true,
     "detected_status": "unclear",
