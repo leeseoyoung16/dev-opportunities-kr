@@ -414,6 +414,48 @@
     "display_status": "open"
   },
   {
+    "id": "kt_aivle",
+    "program_name": "KT 에이블스쿨 (AIVLE School)",
+    "category": "training",
+    "company_or_org": "KT / 고용노동부",
+    "official_url": "https://aivle.kt.co.kr/",
+    "status": "recurring",
+    "job_area": [
+      "ai",
+      "data",
+      "cloud"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1~2회, 5~6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "전국 (온·오프라인)",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (KDT 국비지원)",
+    "benefits": [
+      "KT 채용 우대",
+      "AI 자격증 지원"
+    ],
+    "tech_keywords": [
+      "Python",
+      "AI",
+      "Cloud",
+      "DX",
+      "MLOps"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "KT·고용노동부 공동 운영 AI/DX 인재 양성. AI 개발자·DX 컨설턴트 트랙.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "recurring"
+  },
+  {
     "id": "kia_intern",
     "program_name": "기아 전환형 인턴 (ICT/SW)",
     "category": "intern",
@@ -887,47 +929,6 @@
     "url_reachable": true,
     "detected_status": "unclear",
     "display_status": "recurring"
-  },
-  {
-    "id": "kt_aivle",
-    "program_name": "KT 에이블스쿨 (AIVLE School)",
-    "category": "training",
-    "company_or_org": "KT / 고용노동부",
-    "official_url": "https://aivle.kt.co.kr/",
-    "status": "recurring",
-    "job_area": [
-      "ai",
-      "data",
-      "cloud"
-    ],
-    "target": [
-      "graduate",
-      "job_seeker"
-    ],
-    "schedule_summary": "연 1~2회, 5~6개월",
-    "application_period": "확인 필요",
-    "program_period": "확인 필요",
-    "location": "전국 (온·오프라인)",
-    "online_offline": "혼합",
-    "paid_or_free": "무료 (KDT 국비지원)",
-    "benefits": [
-      "KT 채용 우대",
-      "AI 자격증 지원"
-    ],
-    "tech_keywords": [
-      "Python",
-      "AI",
-      "Cloud",
-      "DX",
-      "MLOps"
-    ],
-    "eligibility": [
-      "국민내일배움카드 발급 가능자"
-    ],
-    "summary": "KT·고용노동부 공동 운영 AI/DX 인재 양성. AI 개발자·DX 컨설턴트 트랙.",
-    "http_status": 403,
-    "url_reachable": false,
-    "detected_status": "unclear"
   },
   {
     "id": "estsoft_bootcamp",
