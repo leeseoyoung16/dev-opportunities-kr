@@ -1011,7 +1011,7 @@
       "서울 거주 청년 (만 15세 이상)"
     ],
     "summary": "서울시 운영 무료 IT 교육. 백엔드·프론트·AI 등 다양한 과정 상시 운영.",
-    "http_status": 404,
+    "http_status": 0,
     "url_reachable": false,
     "detected_status": "unclear"
   },
