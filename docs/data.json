@@ -456,48 +456,6 @@
     "display_status": "recurring"
   },
   {
-    "id": "kia_intern",
-    "program_name": "기아 전환형 인턴 (ICT/SW)",
-    "category": "intern",
-    "company_or_org": "기아 (KIA)",
-    "official_url": "https://kia-autoworld.com/intern/",
-    "status": "recurring",
-    "job_area": [
-      "backend",
-      "fullstack",
-      "embedded"
-    ],
-    "target": [
-      "student",
-      "graduate"
-    ],
-    "schedule_summary": "연 2회 (상반기/하반기), 6주 인턴",
-    "application_period": "상반기: 4월, 하반기: 9월",
-    "program_period": "6주 인턴 후 정규직 전환",
-    "location": "서울 / 화성",
-    "online_offline": "오프라인",
-    "paid_or_free": "유급",
-    "benefits": [
-      "정규직 전환 (현대차그룹 처우)",
-      "SW/ICT 실무"
-    ],
-    "tech_keywords": [
-      "Java",
-      "Python",
-      "C++",
-      "차량SW"
-    ],
-    "eligibility": [
-      "4년제 학사 이상",
-      "졸업(예정)자"
-    ],
-    "summary": "현대차그룹 기아 SW/ICT 전환형 인턴. 6주 후 정규직 전환 심사. 연 2회.",
-    "http_status": 200,
-    "url_reachable": true,
-    "detected_status": "unclear",
-    "display_status": "recurring"
-  },
-  {
     "id": "daangn_intern",
     "program_name": "당근 테크 인턴십",
     "category": "intern",
@@ -929,6 +887,47 @@
     "url_reachable": true,
     "detected_status": "unclear",
     "display_status": "recurring"
+  },
+  {
+    "id": "kia_intern",
+    "program_name": "기아 전환형 인턴 (ICT/SW)",
+    "category": "intern",
+    "company_or_org": "기아 (KIA)",
+    "official_url": "https://kia-autoworld.com/intern/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "fullstack",
+      "embedded"
+    ],
+    "target": [
+      "student",
+      "graduate"
+    ],
+    "schedule_summary": "연 2회 (상반기/하반기), 6주 인턴",
+    "application_period": "상반기: 4월, 하반기: 9월",
+    "program_period": "6주 인턴 후 정규직 전환",
+    "location": "서울 / 화성",
+    "online_offline": "오프라인",
+    "paid_or_free": "유급",
+    "benefits": [
+      "정규직 전환 (현대차그룹 처우)",
+      "SW/ICT 실무"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Python",
+      "C++",
+      "차량SW"
+    ],
+    "eligibility": [
+      "4년제 학사 이상",
+      "졸업(예정)자"
+    ],
+    "summary": "현대차그룹 기아 SW/ICT 전환형 인턴. 6주 후 정규직 전환 심사. 연 2회.",
+    "http_status": 0,
+    "url_reachable": false,
+    "detected_status": "unclear"
   },
   {
     "id": "estsoft_bootcamp",
