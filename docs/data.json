@@ -82,6 +82,50 @@
     "display_status": "open"
   },
   {
+    "id": "likelion_bootcamp",
+    "program_name": "멋쟁이사자처럼 테크 부트캠프",
+    "category": "bootcamp",
+    "company_or_org": "멋쟁이사자처럼 (Likelion)",
+    "official_url": "https://bootcamp.likelion.net/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "fullstack",
+      "ai"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 2회, 약 6개월",
+    "application_period": "확인 필요",
+    "program_period": "확인 필요",
+    "location": "온·오프라인",
+    "online_offline": "혼합",
+    "paid_or_free": "무료 (국비지원)",
+    "benefits": [
+      "기업 채용 연계",
+      "취업 코칭"
+    ],
+    "tech_keywords": [
+      "Python",
+      "Django",
+      "JavaScript",
+      "React",
+      "AI"
+    ],
+    "eligibility": [
+      "국민내일배움카드 발급 가능자"
+    ],
+    "summary": "멋쟁이사자처럼의 취업 전환형 부트캠프. 백엔드·AI 등 다양한 스택.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
     "id": "sesac_bigtech",
     "program_name": "서울 AI 빅테크캠퍼스",
     "category": "training",
@@ -536,50 +580,6 @@
       "취업 준비생"
     ],
     "summary": "삼성SDS 계열 교육 기업. 풀스택·네트워크 엔지니어 등 과정. 전액 무료.",
-    "http_status": 200,
-    "url_reachable": true,
-    "detected_status": "unclear",
-    "display_status": "recurring"
-  },
-  {
-    "id": "likelion_bootcamp",
-    "program_name": "멋쟁이사자처럼 테크 부트캠프",
-    "category": "bootcamp",
-    "company_or_org": "멋쟁이사자처럼 (Likelion)",
-    "official_url": "https://bootcamp.likelion.net/",
-    "status": "recurring",
-    "job_area": [
-      "backend",
-      "frontend",
-      "fullstack",
-      "ai"
-    ],
-    "target": [
-      "student",
-      "graduate",
-      "job_seeker"
-    ],
-    "schedule_summary": "연 2회, 약 6개월",
-    "application_period": "확인 필요",
-    "program_period": "확인 필요",
-    "location": "온·오프라인",
-    "online_offline": "혼합",
-    "paid_or_free": "무료 (국비지원)",
-    "benefits": [
-      "기업 채용 연계",
-      "취업 코칭"
-    ],
-    "tech_keywords": [
-      "Python",
-      "Django",
-      "JavaScript",
-      "React",
-      "AI"
-    ],
-    "eligibility": [
-      "국민내일배움카드 발급 가능자"
-    ],
-    "summary": "멋쟁이사자처럼의 취업 전환형 부트캠프. 백엔드·AI 등 다양한 스택.",
     "http_status": 200,
     "url_reachable": true,
     "detected_status": "unclear",
