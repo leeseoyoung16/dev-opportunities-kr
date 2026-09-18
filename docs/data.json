@@ -126,6 +126,47 @@
     "display_status": "open"
   },
   {
+    "id": "sesac_bigtech",
+    "program_name": "서울 AI 빅테크캠퍼스",
+    "category": "training",
+    "company_or_org": "서울경제진흥원 / 서울시 / NVIDIA·MS",
+    "official_url": "https://sesac.seoul.kr/",
+    "status": "open",
+    "job_area": [
+      "ai",
+      "cloud",
+      "data"
+    ],
+    "target": [
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 2회, 3~5개월",
+    "application_period": "2026.04.13 ~ 2026.05.10 (1차)",
+    "program_period": "2026.05 ~ 2026.09 (예상)",
+    "location": "서울 5개 캠퍼스",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "NVIDIA·MS 현업자 강사",
+      "AI 인증 자격 취득"
+    ],
+    "tech_keywords": [
+      "AI",
+      "CUDA",
+      "Azure",
+      "LLM"
+    ],
+    "eligibility": [
+      "서울 거주 청년"
+    ],
+    "summary": "NVIDIA·Microsoft 참여 AI 특화 무료 교육. 연 450명. ★1차 모집 중★",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "unclear",
+    "display_status": "open"
+  },
+  {
     "id": "elice_track",
     "program_name": "엘리스트랙 백엔드 부트캠프",
     "category": "bootcamp",
@@ -889,46 +930,6 @@
     "detected_status": "unclear"
   },
   {
-    "id": "sesac_bigtech",
-    "program_name": "서울 AI 빅테크캠퍼스",
-    "category": "training",
-    "company_or_org": "서울경제진흥원 / 서울시 / NVIDIA·MS",
-    "official_url": "https://sesac.seoul.kr/",
-    "status": "open",
-    "job_area": [
-      "ai",
-      "cloud",
-      "data"
-    ],
-    "target": [
-      "graduate",
-      "job_seeker"
-    ],
-    "schedule_summary": "연 2회, 3~5개월",
-    "application_period": "2026.04.13 ~ 2026.05.10 (1차)",
-    "program_period": "2026.05 ~ 2026.09 (예상)",
-    "location": "서울 5개 캠퍼스",
-    "online_offline": "오프라인",
-    "paid_or_free": "무료",
-    "benefits": [
-      "NVIDIA·MS 현업자 강사",
-      "AI 인증 자격 취득"
-    ],
-    "tech_keywords": [
-      "AI",
-      "CUDA",
-      "Azure",
-      "LLM"
-    ],
-    "eligibility": [
-      "서울 거주 청년"
-    ],
-    "summary": "NVIDIA·Microsoft 참여 AI 특화 무료 교육. 연 450명. ★1차 모집 중★",
-    "http_status": 0,
-    "url_reachable": false,
-    "detected_status": "unclear"
-  },
-  {
     "id": "estsoft_bootcamp",
     "program_name": "이스트소프트 이스트캠프 AI·백엔드",
     "category": "bootcamp",
@@ -1009,7 +1010,7 @@
       "서울 거주 청년 (만 15세 이상)"
     ],
     "summary": "서울시 운영 무료 IT 교육. 백엔드·프론트·AI 등 다양한 과정 상시 운영.",
-    "http_status": 0,
+    "http_status": 404,
     "url_reachable": false,
     "detected_status": "unclear"
   },
