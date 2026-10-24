@@ -209,6 +209,51 @@
     "display_status": "open"
   },
   {
+    "id": "woowacourse",
+    "program_name": "우아한테크코스 (우테코)",
+    "category": "training",
+    "company_or_org": "우아한형제들 (배달의민족)",
+    "official_url": "https://www.woowacourse.io/",
+    "status": "recurring",
+    "job_area": [
+      "backend",
+      "frontend",
+      "mobile"
+    ],
+    "target": [
+      "student",
+      "graduate",
+      "job_seeker"
+    ],
+    "schedule_summary": "연 1회, 10개월",
+    "application_period": "매년 9~10월",
+    "program_period": "2월 ~ 11월",
+    "location": "서울",
+    "online_offline": "오프라인",
+    "paid_or_free": "무료",
+    "benefits": [
+      "전액 무료",
+      "우아한형제들 채용 우대",
+      "코드리뷰 문화"
+    ],
+    "tech_keywords": [
+      "Java",
+      "Spring",
+      "React",
+      "Android",
+      "TDD"
+    ],
+    "eligibility": [
+      "전공 무관",
+      "누구나"
+    ],
+    "summary": "배달의민족 운영. 백엔드(Java/Spring)·프론트·안드로이드 3개 트랙. 코드 품질·협업 특화.",
+    "http_status": 200,
+    "url_reachable": true,
+    "detected_status": "open",
+    "display_status": "open"
+  },
+  {
     "id": "cccr_sw",
     "program_name": "채용연계형 SW전문인재양성",
     "category": "hiring_linked_program",
@@ -666,51 +711,6 @@
       "4년제 졸업(예정)자"
     ],
     "summary": "삼성전자 운영 대한민국 최대 SW 교육 프로그램. AI 커리큘럼 강화(SSAFY 2.0). 취업률·인지도 최상.",
-    "http_status": 200,
-    "url_reachable": true,
-    "detected_status": "unclear",
-    "display_status": "recurring"
-  },
-  {
-    "id": "woowacourse",
-    "program_name": "우아한테크코스 (우테코)",
-    "category": "training",
-    "company_or_org": "우아한형제들 (배달의민족)",
-    "official_url": "https://www.woowacourse.io/",
-    "status": "recurring",
-    "job_area": [
-      "backend",
-      "frontend",
-      "mobile"
-    ],
-    "target": [
-      "student",
-      "graduate",
-      "job_seeker"
-    ],
-    "schedule_summary": "연 1회, 10개월",
-    "application_period": "매년 9~10월",
-    "program_period": "2월 ~ 11월",
-    "location": "서울",
-    "online_offline": "오프라인",
-    "paid_or_free": "무료",
-    "benefits": [
-      "전액 무료",
-      "우아한형제들 채용 우대",
-      "코드리뷰 문화"
-    ],
-    "tech_keywords": [
-      "Java",
-      "Spring",
-      "React",
-      "Android",
-      "TDD"
-    ],
-    "eligibility": [
-      "전공 무관",
-      "누구나"
-    ],
-    "summary": "배달의민족 운영. 백엔드(Java/Spring)·프론트·안드로이드 3개 트랙. 코드 품질·협업 특화.",
     "http_status": 200,
     "url_reachable": true,
     "detected_status": "unclear",
